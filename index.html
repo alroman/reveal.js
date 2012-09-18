@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Mobile Moodle demo</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Mobile solutions for CCLE Moodle">
+		<meta name="author" content="Alfonso Roman">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,6 +16,7 @@
 		
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -40,20 +41,22 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Mobile Moodle Demo</h1>
+					<h3>Moodle mobile theme vs responsive design</h3>
 				</section>
 				
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with 
-						support for CSS 3D transforms to see it in its full glory.
+					<h2>We Need Mobile Solution</h2>
+					<p class="fragment">
+						Two options at this point.  We can use the Moodle 
+                                                provided mobile theme with modifications.  
+                                                Or we can use responsive design to make our current
+                                                theme look good in mobile.
 					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
+                                        <p class="fragment">
+						Before we get into that, let me tell you about
+                                                the current Moodle mobile theme.
 					</p>
-
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you run the speaker notes server.
 					</aside>
@@ -62,233 +65,193 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
+						<h2>Moodle 'MyMobile' theme</h2>
+
+                                                <p class="fragment">Moodle's current solution to mobile needs.</p>
+                                                <p class="fragment">Self contained theme that's separate from our UCLA theme</p>
+                                                <p class="fragment">Uses jQuerymobile -- it's nice, but mostly incompatible with Moodle's preferred YUI framework</p>
+                                                <p class="fragment">Requires some modifications -- primarily CSS and branding, but also need
+                                                    to update code in order to render our content correctly.</p>
+                                                <p class="fragment">Works out of the box... more or less</p>
+					</section>
+					<section>
+						<h2>Some examples...</h2>
+                                                <p>
+                                                    Front page
+                                                </p>
 						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+                                                    <img height="480" src="img/IMG_0685.PNG" alt="" >
+                                                </p>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview!
-					</p>
-				</section>
-
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						If you don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-				
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					## Markdown support
-					
-					For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-					<pre><code contenteditable style="margin-top: 20px;">&lt;section data-markdown&gt;
-  ## Markdown support
-
-  For those of you who like that sort of thing. 
-  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-&lt;/section&gt;
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a> -
-						<a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a> -
-						<a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a> -
-						<a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a>
-					</p>
-				</section>
-
-				<section>
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="http://lab.hakim.se/reveal-js/?theme=sky">Sky</a> -
-						<a href="http://lab.hakim.se/reveal-js/?theme=beige">Beige</a> -
-						<a href="http://lab.hakim.se/reveal-js/?theme=simple">Simple</a> -
-						<a href="http://lab.hakim.se/reveal-js/">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<section data-state="alert">
-						<h2>Global State</h2>
+						<h2>Some examples...</h2>
+                                                <p>
+                                                    Block navigation (through button)
+                                                </p>
 						<p>
-							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-							will be added as a class to the document element when the slide is open. This lets you
-							apply broader style changes, like switching the background.
-						</p>
-						<a href="#/7/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+                                                    <img height="480" src="img/IMG_0686.PNG" alt="" >
+                                                </p>
 					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+                                        <section>
+						<h2>Some examples...</h2>
+                                                <p>
+                                                    Browse By (with fixes)
+                                                </p>
+						<p>
+                                                    <img height="480" src="img/IMG_0687.PNG" alt="" >
+                                                </p>
 					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+                                        <section>
+						<h2>Some examples...</h2>
+                                                <p>Course sites</p>
+						<p>
+                                                    <img height="480" src="img/IMG_0690.PNG" alt="" >
+                                                </p>
 					</section>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+                                        <section>
+						<h2>Some examples...</h2>
+                                                <p>
+                                                    Course sites (broken)
+                                                </p>
+						<p>
+                                                    <img height="480" src="img/IMG_0689.PNG" alt="" >
+                                                </p>
+					</section>
+                                        <section>
+						<h2>Some examples...</h2>
+                                                <p>
+                                                    Site menu (slightly broken)
+                                                </p>
+						<p>
+                                                    <img height="480" src="img/IMG_0688.PNG" alt="" >
+                                                </p>
+					</section>
+                                        <section>
+						<h2>...More Or Less Part</h2>
+                                                <p>
+                                                    Some of these items can't be easily fixed with CSS overrides.  
+                                                    Would require lots code modifications.
+                                                </p>
+						<p>
+                                                    <img height="480" src="img/IMG_0691.PNG" alt="" >
+                                                    <img height="480" src="img/IMG_0692.PNG" alt="" >
+                                                </p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Clever Quotes</h2>
+					<h2>We can work with it...</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-    
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) ) {
-        node.className += ' roll';
-      }
-    };
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-				
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
+						But I want to show you a better approach.
 					</p>
 				</section>
 
+<!--				<section>
+					<h2>Responsive Web Design</h2>
+					<p>
+						It will solve the world's problems and make everyone in this room much more 
+                                                handsome and/or prettier.
+					</p>
+				</section>-->
+
 				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
+					<h2>Responsive Web Design</h2>
+                                        <p class="fragment">
+						An approach to web design in which your site is crafted to provide an 
+                                                optimal viewing experience for all screen sizes.
+					</p>
+                                        <p class="fragment">
+                                            Easier said than done.  This requires some planning and is usually done as a 
+                                            bottom up design.  That is, you design with mobile in mind, and progressively 
+                                            enhance your site as screen size grows.
+                                        </p>
+                                        <p class="fragment" >
+                                            We don't want to re-design our site.  We only want to modify
+                                            it so that it looks good on mobile screens.  
+                                        </p>
 				</section>
-				
+
 				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png" alt="BreakDOM game screenshot">
-					</a>
+					<h2>How it's done</h2>
+                                        <p class="fragment">
+                                            CSS
+                                        </p>
+                                        <p class="fragment">
+                                            That's it.
+                                        </p>
+                                        <p class="fragment">
+                                            Sort of...
+                                        </p>
 				</section>
-				
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
+					<h2>How it's really done</h2>
+                                        <p class="fragment">
+                                            We use the fluid grid (sizing based on percentages).  We already have a
+                                            fluid layout in our current Moodle theme... sort of.  Nothing that can't
+                                            be tamed with some CSS.
+                                        </p>
+                                        <p class="fragment">
+                                            We also use CSS media query (@media rules).  This allows us to modify the 
+                                            site for a specific screen size. 
+                                        </p>
+                                        <p class="fragment" >
+                                            We also make some minor tweaks to our 
+                                            current theme.  Mainly some conditional CSS rules
+                                            to be applied based on column layout (we use two 
+                                            and three-column designs).
+                                        </p>
+				</section>				
+                                <section>
+                                    <section>
+                                        <h2>General approach</h2>
+                                        <p>
+                                            We start with original site layout.  As screen becomes smaller, the side 
+                                            block columns collapse below the main content.  
+                                        </p>
+                                        <p>
+                                            When this happens, the column content 
+                                            resizes to 100% of the screen width.
+                                        </p>
+                                    </section>
+                                    <section>
+                                        <h2>And you get this</h2>
+                                        <p>
+                                            <img height="450" src="img/flex.png" alt="" >
+                                        </p> 
+                                    </section>
 				</section>
-				
 				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
+					<h2>Let me just show you...</h2>
+                                        <p>
+                                            Demo
+                                        </p>
 				</section>
-				
+                                <section>
+					<h2>Discussion</h2>
+                                        <p>
+                                            So what approach do we want to pursue for mobile?
+                                        </p>
+				</section>
+                                <section>
+					<h2>Arguments for responsive design</h2>
+                                        <p>
+                                            With responsive design, we only have one site 
+                                            to maintain. 
+                                        </p>
+                                        <p>
+                                            We have to devote some resources to make CSS changes, but
+                                            this is also true for the mobile theme.
+                                        </p>
+                                        <p>
+                                            We can make experience as feature rich as it needs to be.  
+                                        </p>
+                                        <p>
+                                            We can improve experience with feedback.
+                                        </p>
+				</section>
 				<section>
 					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h3></h3>
 				</section>
 			</div>
 
