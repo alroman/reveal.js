@@ -1,0 +1,39 @@
+
+%tomato {
+    color: tomato;
+    text-shadow:
+       4px 4px 0 #fff,
+     -1px -1px 0 #fff,  
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+       1px 1px 0 #fff;
+}
+
+.sass-heart,
+h2.sass-heart,
+h1.main {    
+    @extend %tomato;
+}
+
+.sourcemaps {
+   
+    .sourcemaps-demo {
+        color: orange;
+        padding: 10px;
+        
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in;
+        
+        &:hover {
+
+            color: tomato;
+            background-color: white;
+        }
+    }
+    
+}
+
+.reveal p {
+    margin-bottom: 20px;
+}
