@@ -62,26 +62,77 @@ const elementWithChildren = (
     </code></pre>
 </section>
 <section>
-    <h3>
-        Creating components
-    </h3>
-    show component composition, maybe show demo
+    <h3>JSX...</h3>
+    <p>
+        Turns out separation of concerns is overrated.  
+    </p>
+    <p class="fragment">
+        JSX allows you to relax this separation to great effect.
+    </p>
 </section>
 <section>
     <h3>
-        State and props
+        State & props
     </h3>
-    talk about what these two are
+    <p>
+        Each component maintains a state and can potentially have props (properties).
+    </p>
+    <p>
+        React data flow is `unidirectional`.  Data can only go from parent components to their children.
+    </p>
 </section>
 <section>
     <h3>
         Props
     </h3>
-    explain how you pass data to components
+    <p>
+        Similar to the HTML element properties that you already know.  
+    </p>
+    <p>
+        Properties are instantiated when a component is created.
+    </p>
+    <p>
+        Properties are how components talk to each other and can be used to set up the state of a child component.
+    </p>
 </section>
 <section>
     <h3>
-        state
+        State
     </h3>
-    explain how components are responsible for their own state
+    <p>
+        State is mostly a simple object.
+    </p>
+    <p>
+        State is managed by the owning component and it's never shared, however it can be passed down to its own children as a prop.  
+    </p>
+    <pre><code class="js">
+        constructor(props) {
+            super(props)
+            this.state = {
+                color: 'green',
+                list: [
+                    'first',
+                    'second',
+                ]
+            }
+        }
+    </code></pre>
+</section>
+<section>
+    <h3>State...</h3>
+    <p>
+        You never modify state directly.  You modify the state by calling <code>seState(obj)</code>
+    </p>
+    <pre><code class="js">
+        this.setState({color: 'blue'})
+    </code></pre>
+    <p>
+        State updates are async, and react decides how to 'merge' updates.
+    </p>
+</section>
+<section>
+    <h3>
+        Creating components
+    </h3>
+    <p>Demo...</p>
 </section>

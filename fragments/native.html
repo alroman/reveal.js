@@ -3,11 +3,65 @@
         Going native
     </h2>
 </section>
+
 <section>
     <h3>
         iOS + Android
     </h3>
     Talk about how DOM is replaced with UIKit 
+</section>
+<section>
+    <h3>Layouts & Styling</h3>
+    <p>With React native you use Javascript to style your components</p>
+    <p class="fragment">
+        Styles names and values work similar to CSS on the web.
+    </p>
+    <pre><code>
+&lt;View&gt;
+    &lt;Text style={styles.red}&gt;just red&lt;/Text&gt;
+    &lt;Text style={styles.bigblue}&gt;just bigblue&lt;/Text&gt;
+    &lt;Text style={[styles.bigblue, styles.red]}&gt;bigblue, then red&lt;/Text&gt;
+    &lt;Text style={[styles.red, styles.bigblue]}&gt;red, then bigblue&lt;/Text&gt;
+&lt;/View&gt;
+    </code></pre>
+</section>
+<section>
+    <h3>Layouts & Styling...</h3>
+        <pre><code>
+const styles = StyleSheet.create({
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
+    </code></pre>
+</section>
+<section>
+    <h3>
+        Testing process
+    </h3>
+</section>
+<section>
+    <h3>differen concerns for different platforms</h3>
+
+    bridge
+</section>
+<section>
+    <h3>IDEs?</h3>
+    how does the IDE process work..?
+    When do you need the IDE?
+
+    platform specific needs
+    asset bundling
+</section>
+<section>
+    <h3>
+        react plugins
+    </h3>
 </section>
 <section>
     <h3>

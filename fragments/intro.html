@@ -17,8 +17,6 @@
         </div>
     </p>
     <p class="fragment">
-        React allows you to think of `<code>UI = f(data)</code>`
-    <br>
         It's not really a framework, more like a library that helps you manage UI components in a declarative way. <span class="fragment">But what's a component?!</span>
     </p>
 </section>
@@ -64,14 +62,31 @@
     </p>
 </section>
 <section>
-    <h3>React is fast!</h3>
-    <p>
-        
+    <h3>So what is React</h3>
+    <p class="fragment">
+        It's a better way to think of your frontend.
+    </p>
+    <p class="fragment">
+        React allows you to think of `<code>UI = f(data)</code>`
+    </p>
+    <p class="fragment">
+        React is also fast!  
     </p>
 </section>
 <section>
     <h3>The DOM</h3>
-    <p>One thing jQuery let you do very well, was modify the DOM.  </p>
+    <p>One thing jQuery let you do very well, was modify elemnts in the DOM.  </p>
+    <p>Most frameworks that modify the DOM have to worry about layout thrashing</p>
+</section>
+<section>
+    <h3>React Virtual DOM</h3>
+    <p>
+        React introduces the shadow DOM or virtual DOM.  
+    </p>
+    <p class="fragment">
+        Think of this as a diff.  React looks at your current layout, and if there's an update in the state, then it'll redraw the layout.
+    </p>
+    
 </section>
 <section>
     <h3>React and the Virtual DOM</h3>
