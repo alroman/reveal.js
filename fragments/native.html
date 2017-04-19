@@ -8,64 +8,134 @@
     <h3>
         iOS + Android
     </h3>
-    Talk about how DOM is replaced with UIKit 
-</section>
-<section>
-    <h3>Layouts & Styling</h3>
-    <p>With React native you use Javascript to style your components</p>
-    <p class="fragment">
-        Styles names and values work similar to CSS on the web.
+    <p>
+        React Native takes all the concepts from React.js (as well as the core) and lets you produce fully native apps.  No web wrapper, no BS.  Fully native apps running at ~ 60fps.
     </p>
+</section>
+<section>
+    <h3>!Cordova</h3>
+    <p>
+        This is not at all like Cordova (or Ionic) or any other web-wrapper platform.  The code produced is fully native `Objective-C` and `Java` code.
+    </p>
+</section>
+<section>
+    <h3>React Native</h3>
+    <p>
+        How this is done is a cool CS topic onto itself.  You can imagine this process as taking the DOM and replacing it with UIKit (or Android equivalent).  So instead of rendering HTML nodes, you render UIKit `UIView`s or Android `Activity`s
+    </p>
+</section>
+<section>
+    <h3>React Native...</h3>
+    <img src="images/native.jpg" alt="">
+</section>
+<section>
+    <h3>React Native Bridge</h3>
+    <p>Magic happens through the 'bridge'</p>
+</section>
+<section>
+    <h3>React Native Bridge...</h3>
+    <img src="images/bridge.jpg" alt="">
+</section>
+<section>
+    <h3>React Native Bridge...</h3>
+    <img src="images/real-bridge.png" alt="">
+</section>
+<section>
+    <h3>React Native Sample</h3>
     <pre><code>
-&lt;View&gt;
-    &lt;Text style={styles.red}&gt;just red&lt;/Text&gt;
-    &lt;Text style={styles.bigblue}&gt;just bigblue&lt;/Text&gt;
-    &lt;Text style={[styles.bigblue, styles.red]}&gt;bigblue, then red&lt;/Text&gt;
-    &lt;Text style={[styles.red, styles.bigblue]}&gt;red, then bigblue&lt;/Text&gt;
-&lt;/View&gt;
-    </code></pre>
-</section>
-<section>
-    <h3>Layouts & Styling...</h3>
-        <pre><code>
+import React, { Component } from &apos;react&apos;;
+
+import {
+    StyleSheet,
+    Text,
+    View,
+    Button,
+    Image,
+    TouchableOpacity
+} from &apos;react-native&apos;;
+import HomeIcon from &apos;./HomeIcon&apos;
+
+class HomeScreenRow extends React.Component {
+
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      &lt;View style={styles.container} &gt;
+          &lt;TouchableOpacity
+              style={styles.iconContainer}
+              onPress={() =&gt; navigate(this.props.left.route)}&gt;
+              &lt;HomeIcon 
+                  label={this.props.left.title} 
+                  width={120}
+                  height={100}
+                  colorTop=&quot;#1C4E84&quot;
+                  colorBottom=&quot;#0F2843&quot;
+                  iconSource={this.props.left.src} 
+                  iconWidth={30}
+                  iconHeight={30}
+                  /&gt;
+          &lt;/TouchableOpacity&gt;
+
+          &lt;TouchableOpacity
+              style={styles.iconContainer}
+              onPress={() =&gt; navigate(this.props.right.route)}&gt;
+              &lt;HomeIcon 
+                  label={this.props.right.title} 
+                  width={120}
+                  height={100}
+                  colorTop=&quot;#1C4E84&quot;
+                  colorBottom=&quot;#0F2843&quot;
+                  iconSource={this.props.right.src} 
+                  iconWidth={30}
+                  iconHeight={30}
+                  /&gt;
+          &lt;/TouchableOpacity&gt;
+      &lt;/View&gt;
+    )
+  }
+}
+
 const styles = StyleSheet.create({
-  bigblue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
-  },
+    container: {
+        flex: 1,
+        padding: 10,
+        flexDirection: &apos;row&apos;,
+        alignItems: &apos;center&apos;,
+    },
 });
+
+export default HomeScreenRow;
     </code></pre>
 </section>
 <section>
-    <h3>
-        Testing process
-    </h3>
+    <h3>Different concerns for different platforms</h3>
+    <p>
+        About 80% of code sharing in apps.  The other 20% has to be platform specific code.
+    </p>
+    <p class="fragment">
+        ** Citation needed.  Numbers were overheard.
+    </p>
 </section>
 <section>
-    <h3>differen concerns for different platforms</h3>
-
-    bridge
+    <h3>Two entry points</h3>
+    <p>
+        React Native has separate entry points for Android and iOS apps.  This allows you to organize your app according to the platform.  
+    </p>
 </section>
 <section>
-    <h3>IDEs?</h3>
-    how does the IDE process work..?
-    When do you need the IDE?
-
-    platform specific needs
-    asset bundling
-</section>
-<section>
-    <h3>
-        react plugins
-    </h3>
+    <h3>IDE?</h3>
+    <p>Mostly use text editors that you use to edit Javascript.  React generates Xcode and Android projects.  You can edit those if you'd like to add platform specific resources (like iOS @2x, @3x assets)</p>
 </section>
 <section>
     <h3>
-        MobX
+        React native plugins
     </h3>
-    show chrome tools extension
+    <p>
+        Odds are someone has already built it.  And if they haven't, you should go ahead and build it.
+    </p>
+</section>
+<section>
+    <h3>
+        Testing components
+    </h3>
 </section>

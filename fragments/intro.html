@@ -10,28 +10,68 @@
     <p class="fragment">
         React.js was created by Facebook.  
     </p>
+    
+    <div class="fragment">Good job Facebook!</div>
+    <div class="fragment">
+        <img src="http://vignette1.wikia.nocookie.net/zombiejombie/images/4/40/Fb_like_button.png/revision/latest?cb=20120604120820" style="border: 0 0 ">
+    </div>
+
     <p class="fragment">
-        <div class="fragment">Good job Facebook!</div>
-        <div class="fragment">
-            <img src="http://vignette1.wikia.nocookie.net/zombiejombie/images/4/40/Fb_like_button.png/revision/latest?cb=20120604120820">
-        </div>
+        It's not really a framework, more like a library that helps you manage UI components in a declarative way. 
     </p>
-    <p class="fragment">
-        It's not really a framework, more like a library that helps you manage UI components in a declarative way. <span class="fragment">But what's a component?!</span>
-    </p>
+</section>
+<section>
+    <h4>...but what's a component</h4>
 </section>
 <section>
     <h3>The Component connection</h3>
     <p>
-        Components or Webcomponents was the dream that never quite materialized. A dream of re-usable interface widgets that would be part of the browser.
+        Components or Web Components was the dream that never quite materialized. A dream of re-usable interface widgets that would be part of the browser.
     </p>
     <p class="fragment">
-        This was partially achieved by Polymer.js.  A google library that pollyfilled Web Components.
+        This has been partially achieved by Polymer.js, library that pollyfills Web Components.
     </p>
     <ul class="fragment">
+        <li>https://www.webcomponents.org</li>
         <li>https://www.polymer-project.org</li>
         <li>https://developer.mozilla.org/en-US/docs/Web/Web_Components</li>
     </ul>
+</section>
+<section>
+    <h4>Polymer sample</h4>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;bower_components/webcomponentsjs/webcomponents-lite.js&quot;&gt;
+    &lt;/script&gt;
+    &lt;link rel=&quot;import&quot; href=&quot;bower_components/polymer/polymer-element.html&quot;&gt;
+    &lt;title&gt;Defining a Polymer Element from the Main Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;dom-module id=&quot;main-document-element&quot;&gt;
+      &lt;template&gt;
+        &lt;p&gt;
+          Hi! I&apos;m a Polymer element that was defined in the
+          main document!
+        &lt;/p&gt;
+      &lt;/template&gt;
+      &lt;script&gt;
+        HTMLImports.whenReady(function() {
+          class MainDocumentElement extends Polymer.Element {
+
+            static get is() { return &apos;main-document-element&apos;; }
+
+          }
+          window.customElements.define(MainDocumentElement.is, MainDocumentElement);
+        });
+      &lt;/script&gt;
+    &lt;/dom-module&gt;
+    &lt;main-document-element&gt;&lt;/main-document-element&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+    </code></pre>
 </section>
 <section>
     <h3>!framework</h3>
@@ -39,17 +79,15 @@
         React.js is not quite a framework.  
     </p>
     <p class="fragment">
-        It brings us closer to the idea of components -- but adds some really neat stuff.
+        It brings us closer to the idea of web components... but adds some really neat stuff.
     </p>
 </section>
 <section>
     <h3>!jQuery</h3>
     <p>
-        React components encapsulates its functionality, so there is rarely a need to interact with the DOM.  Components already know how to handle events!
+        React components encapsulates its functionality, so there is rarely a need to interact directly with the DOM.  Components already know how to handle events!
 
         <pre class="fragment"><code>$("section h1").on('click', alert('lol'))</code></pre>
-
-        <span class="fragment">jQuery be gone!</span>
     </p>
 </section>
 <section>
@@ -62,35 +100,15 @@
     </p>
 </section>
 <section>
-    <h3>So what is React</h3>
-    <p class="fragment">
-        It's a better way to think of your frontend.
-    </p>
-    <p class="fragment">
-        React allows you to think of `<code>UI = f(data)</code>`
-    </p>
-    <p class="fragment">
-        React is also fast!  
-    </p>
-</section>
-<section>
-    <h3>The DOM</h3>
-    <p>One thing jQuery let you do very well, was modify elemnts in the DOM.  </p>
-    <p>Most frameworks that modify the DOM have to worry about layout thrashing</p>
-</section>
-<section>
-    <h3>React Virtual DOM</h3>
-    <p>
-        React introduces the shadow DOM or virtual DOM.  
-    </p>
-    <p class="fragment">
-        Think of this as a diff.  React looks at your current layout, and if there's an update in the state, then it'll redraw the layout.
-    </p>
-    
-</section>
-<section>
-    <h3>React and the Virtual DOM</h3>
-    <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/BYbgopx44vo?rel=0" frameborder="0" allowfullscreen></iframe>
-    </p>
+    <h4>Angular sample</h4>
+    <pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `<h1>Hello {{name}}</h1>`
+})
+export class AppComponent { name = 'Angular'; }</code></pre>
+    <pre><code>&lt;body&gt;
+    &lt;my-app&gt;Loading AppComponent content here ...&lt;/my-app&gt;
+&lt;/body&gt;</code></pre>
 </section>

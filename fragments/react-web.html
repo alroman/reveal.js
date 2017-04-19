@@ -1,0 +1,84 @@
+<section>
+    <h2>So what is React?</h2>
+</section>
+<section>
+    <h3>So what is React?</h3>
+    <p>We already know what it's not, so let's take a look at what it is...</p>
+    <p class="fragment">We'll focus on React for the web</p>
+</section>
+<section>
+    <h3>React is...</h3>
+    <p class="fragment">
+        A better way to think of your frontend.
+    </p>
+    <p class="fragment">
+        React allows you to think of `UI = f(data)`.  This is important because programming UIs is hard.  You have to reason about user actions and change your UI's state accordingly - and track that state.  
+    </p>
+    <p class="fragment">
+        React is also fast!
+    </p>
+</section>
+<section>
+    <h3>Web UI programming</h3>
+    <p>
+        When reasoning about your front-end, you're considering the structural markup required to create your UI, the CSS styles that define how the UI looks, and the Javascript that modifies the DOM in order to update your UI's state.
+    </p>
+    <p>
+        Typically you reason this out by separating your concerns and maintaining modular code.  And possibly some build system that uses Node.js.  This will get very complex the bigger your project and the snazzier you make your UI.
+    </p>
+</section>
+<section>
+    <h4>Typical web project</h4>
+    <pre><code>/project
+    /app
+        index.html
+    /partials
+        header.hbs
+        footer.hbs
+        block.hbs
+        section.hbs
+    /css
+        main.scss
+        _footer.scss
+        _header.scss
+    /js
+        /lib
+        app.js</code></pre>
+</section>
+<section>
+    <h3>Web UI programming</h3>
+    <p>
+        React helps you manage this complexity by relaxing this separation of concerns and instead focus on creating and composing components.
+    </p>
+    <p class="fragment">
+        We'll discuss components in a bit...
+    </p>
+</section>
+<section>
+    <h3>Web UI programming</h3>
+    <p>
+        A lot of the heavy lifting is done by CSS, but when you want to make a very interactive UI, you need to toggle styles or show/hide elements.  This is where jQuery shines with easy DOM manipulation.
+    </p>
+    <pre><code>&lt;div class=&quot;tumble&quot;&gt;Some text.&lt;/div&gt;</code></pre>
+    <pre><code>$( "div.tumble" ).toggleClass( "bounce" )</code></pre>
+</section>
+<section>
+    <h3>The DOM</h3>
+    <p>Manipulating the DOM is expensive.  Each time you toggle styles or visiblity, the DOM needs to re-render its layout.  This is why you sometimes see janky website animations</p>
+    <p>Most frameworks that modify the DOM have to worry about layout thrashing</p>
+</section>
+<section>
+    <h3>React Virtual DOM</h3>
+    <p>
+        React React introduces the shadow DOM or virtual DOM.  This prevents layout thrashing by queing DOM updates in a 'shadow' copy of the DOM.  React then figures out when's the best time to copy its changes to the real DOM.
+    </p>
+    <p class="fragment">
+        Think of this as a diff.  React looks at your current layout, and if there's an update in the state, then it'll redraw the layout.
+    </p>
+</section>
+<section>
+    <h3>React and the Virtual DOM</h3>
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BYbgopx44vo?rel=0" frameborder="0" allowfullscreen></iframe>
+    </p>
+</section>

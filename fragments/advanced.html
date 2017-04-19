@@ -1,0 +1,164 @@
+<section>
+    <h2>Advanced topics</h2>
+    <p class="fragment">
+        That we will conveniently cover very quickly...
+    </p>
+</section>
+<section>
+    <h3>
+        State management
+    </h3>
+    <p class="fragment">
+        How you manage react apps is by managing component state.  The architecture pattern defined by Facebook is called 'Flux' which reiterates the idea that `UI = f(data)`  
+    </p>
+    <p class="fragment">
+        By managing state, you manage the complexity of your app.
+    </p>
+</section>
+<section>
+    <h3>Flux</h3>
+    <p class="fragment">
+        "Flux is a pattern for managing data flow in your application. The most important concept is that data flows in one direction. "
+    </p>
+    <p class="fragment">
+        https://facebook.github.io/flux/
+    </p>
+</section>
+<section>
+    <h3>Flux...</h3>
+    <img src="images/flux.png" alt="">
+</section>
+<section>
+    <h3>Flux...</h3>
+    <img src="images/flux2.png" alt="">
+</section>
+<section>
+    <h3>Redux</h3>
+    <p class="fragment">
+        Redux is an opinionated implementation of this pattern. "Redux is a predictable state container for JavaScript apps"
+    </p>
+    <p class="fragment">
+        Redux introduces actions and reducers.  Actions are explicit and predictable.  Does not necesseraly require React.
+    </p>
+    <p>
+        http://redux.js.org
+    </p>
+</section>
+<section>
+    <h3>Redux...</h3>
+    <img src="images/redux.png" alt="">
+</section>
+<section>
+    <h3>Redux...</h3>
+    <img src="images/redux2.jpg" alt="">
+</section>
+<section>
+    <h3>
+        MobX
+    </h3>
+    <p class="fragment">
+        Another take on state management that does not impose the stricness of Redux.  It simplifies state management with 3 steps (but also introduces `@` decorators):
+    </p>
+    <ol class="fragment">
+        <li>Define your state and make it observable</li>
+        <li>Create a view that responds to changes in the State</li>
+        <li>Modify the State</li>
+    </ol>
+    <p>
+        https://mobx.js.org/intro/overview.html
+    </p>
+</section>
+<section>
+    <h3>MobX...</h3>
+    <img src="images/mobx.png" alt="">
+</section>
+<section>
+    <h3>MobX...</h3>
+    <img src="images/mobx2.png" alt="">
+</section>
+<section>
+    <h3>Data stores</h3>
+    <p>
+        How you manage data in react depends on your environment.  For React.js web you can use the available browser file storage APIs.  
+    </p>
+    <p>
+        https://developer.mozilla.org/en-US/docs/Web/API/File
+    </p>
+    <p class="fragment">
+        This is not very interesting.  It's what you should already know.
+    </p>
+</section>
+<section>
+    <h3>React Native data stores</h3>
+    <p>
+        React native does not have a Web API to fall back on, so you can rely on several options.
+    </p>
+</section>
+<section>
+    <h3>Squite Storage</h3>
+    <p>
+        Use your typical SQL database patterns with an Sqlite store.
+    </p>
+    <p>
+        https://github.com/andpor/react-native-sqlite-storage
+    </p>
+</section>
+<section>
+    <h3>Realm</h3>
+    <p>
+        Realm is an object store database.  
+        "Realm JavaScript enables you to efficiently write your app’s model layer in a safe, persisted and fast way. It’s designed to work with React Native and Node.js."
+    </p>
+    <p>
+        https://realm.io/docs/javascript/latest/
+    </p>
+    <p class="fragment">
+        **disclaimer: I love realm.  It's incredibly easy to use.
+    </p>
+</section>
+<section>
+    <h3>Realm...</h3>
+    <pre><code>
+const Realm = require('realm');
+
+class Person {}
+Person.schema = {
+    name: 'Person',
+    primaryKey: 'name',
+    properties: {
+        name: 'string',
+        age: {type: 'int', default: 0},
+    },
+};
+
+const realm = new Realm({schema: [Person]});
+
+// Query
+let people = realm.objects('Person', 'age >= 17');
+people.length // => 0
+
+// Write
+realm.write(() => {
+    savedPerson = realm.create('Person', {
+        name: 'Hal Incandenza',
+        age: 17,
+    });
+});
+
+// Queries are updated in real-time
+people.length // => 1
+Get Started with Realm React Native
+    </code></pre>
+</section>
+<section>
+    <h3>Couchbase</h3>
+    <p>
+        Couchbase Lite binding for react-native on both iOS and Android. It works by exposing some functionality to the native Couchbase Lite and the remaining actions are peformed via the REST API.
+    </p>
+    <p>
+        https://github.com/couchbaselabs/react-native-couchbase-lite
+    </p>
+    <p class="fragment">
+        Couchbase will present and showcase this tomorrow!
+    </p>
+</section>

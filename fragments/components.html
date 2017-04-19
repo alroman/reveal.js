@@ -6,60 +6,78 @@
 <section>
     <h3>Big pile of components</h3>
     <p>
-    Your whole react app is just one big pile of components.  And each component is built of even more components under the hood.
+        In React your whole app is just one big pile of components.  And each component is in turn composed of another pile of components under the hood.  You keep doing this until you get to atomic HTML elements like <code>&lt;div&gt;</code>s
     </p>
     
-    <pre><code class="html">
-    &lt;App&gt;
-        &lt;Intro&gt;Hello World&lt;/Intro&gt;
-        &lt;Content/&gt;
-        &lt;Footer links={this.state.links} /&gt;
-    &lt;/App&gt;
-
-    </code></pre>
+<pre><code class="html">&lt;App&gt;
+    &lt;Intro&gt;Hello World&lt;/Intro&gt;
+    &lt;Content/&gt;
+    &lt;Footer links={this.state.links} /&gt;
+&lt;/App&gt;</code></pre>
 </section>
 <section>
     <h2>Be the component</h2>
     <p >
-       You already work with components.  HTML is full of them and your browser already knows how to render them and how to handle user interaction.
+       You already know how to work with components.  HTML is full of them and your browser already knows how to render them and how to handle user interaction.
     </p>
-    <pre><code>
-&lt;select name="select"&gt;
+    <pre><code>&lt;select name="select"&gt;
   &lt;option value="value1"&gt;Value 1&lt;/option&gt; 
   &lt;option value="value2" selected&gt;Value 2&lt;/option&gt;
   &lt;option value="value3"&gt;Value 3&lt;/option&gt;
-&lt;/select&gt;
-    </code></pre>
+&lt;/select&gt;</code></pre>
 </section>
 <section>
     <h3>Be the component</h3>
-    <p>Think of <code>&lt;App&gt;</code> as just another component, but in this case React tells the browser how to render and how to, uh..., react with it</p>
+    <p>React builds on this idea.  Think of <code>&lt;App&gt;</code> as just another component, but in this case React tells the browser how to render and how to interact with it.  The component encapsulates that logic</p>
 </section>
 <section>
     <h3>Be the component</h3>
     <p>
-        Suppose we wanted to make a <code>&lt;ValueSelect&gt;</code> component
+        Suppose we wanted to make a very contrived example.  Let's call it the <code>&lt;ValueSelect&gt;</code> component
     </p>
-    <pre><code class="html">
-        &lt;ValueSelect 
-            name="select" 
-            options={['value1', 'value2', 'value3']} /&gt;
-    </code></pre>
+<pre><code class="html"> &lt;ValueSelect 
+    name="select" 
+    options={['value1', 'value2', 'value3']} /&gt; </code></pre>
+</section>
+<section>
+    <h4>Code demo...</h4>
+    <p>
+        https://github.com/alroman/react-ctfm
+    </p>
 </section>
 <section>
     <h3>JSX</h3>
     <p>
         JSX is a syntax extension to Javascript.
     </p> 
-    <pre><code class="js">
-const element = <h1>Hello, world!</h1>;
+    <pre><code class="js">const element = <h1>Hello, world!</h1>;
+
 const elementWithChildren = (
   &lt;div&gt;
     &lt;h1&gt;Hello!&lt;/h1&gt;
     &lt;h2&gt;Good to see you here.&lt;/h2&gt;
   &lt;/div&gt;
-);
-    </code></pre>
+);</code></pre>
+</section>
+<section>
+    <h3>JSX...</h3>
+    <p>No magic, JSX is transpiled to plain ol' Javascript</p>
+    <pre><code>class Hello extends React.Component {
+  render() {
+    return React.createElement('div', null, `Hello ${this.props.toWhat}`);
+  }
+}
+
+ReactDOM.render(
+  React.createElement(Hello, {toWhat: 'World'}, null),
+  document.getElementById('root')
+);</code></pre>
+<pre><code>const e = React.createElement;
+
+ReactDOM.render(
+  e('div', null, 'Hello World'),
+  document.getElementById('root')
+);</code></pre>
 </section>
 <section>
     <h3>JSX...</h3>
@@ -67,12 +85,20 @@ const elementWithChildren = (
         Turns out separation of concerns is overrated.  
     </p>
     <p class="fragment">
-        JSX allows you to relax this separation to great effect.
+        JSX allows you to relax this separation to great effect.  By mixing your markup with your JS and styles.
     </p>
+<pre class="fragment"><code>const divStyle = {
+  color: 'blue',
+  backgroundImage: 'url(' + imgUrl + ')',
+};
+
+function HelloWorldComponent() {
+  return <div style={divStyle}>Hello World!</div>;
+}</code></pre>
 </section>
 <section>
     <h3>
-        State & props
+        State & Props
     </h3>
     <p>
         Each component maintains a state and can potentially have props (properties).
@@ -85,38 +111,46 @@ const elementWithChildren = (
     <h3>
         Props
     </h3>
-    <p>
+    <p >
         Similar to the HTML element properties that you already know.  
     </p>
-    <p>
-        Properties are instantiated when a component is created.
+    <pre><code>&lt;img src=&quot;./cats.png&quot; alt=&quot;Cats!&quot;&gt;</code></pre>
+    <p class="fragment">
+        Properties are instantiated when a component is created.  This is how components talk to each other.  A parent component can set the initial state of a child component by setting its properties.
     </p>
+</section>
+<section>
+    <h3>State</h3>
     <p>
-        Properties are how components talk to each other and can be used to set up the state of a child component.
+        State is a special variable used by components to maintain... uh, state.
+    </p>
+    <p class="fragment">
+        State is an async data stream (aka Reactive).  Whenever this variable changes, your component is notified and allowed to update (and re-render) itself.  Think of your components as declarative.
     </p>
 </section>
 <section>
     <h3>
-        State
+        State...
     </h3>
     <p>
         State is mostly a simple object.
     </p>
-    <p>
-        State is managed by the owning component and it's never shared, however it can be passed down to its own children as a prop.  
-    </p>
-    <pre><code class="js">
-        constructor(props) {
-            super(props)
-            this.state = {
-                color: 'green',
-                list: [
-                    'first',
-                    'second',
-                ]
-            }
+    <pre><code class="js"> ...
+    constructor(props) {
+        super(props)
+        this.state = {
+            color: 'green',
+            list: [
+                'first',
+                'second',
+            ]
         }
-    </code></pre>
+    }
+... </code></pre>
+    <p class="fragment">
+        State is managed by the owning component and it's never shared.
+    </p>
+
 </section>
 <section>
     <h3>State...</h3>
@@ -126,13 +160,13 @@ const elementWithChildren = (
     <pre><code class="js">
         this.setState({color: 'blue'})
     </code></pre>
-    <p>
+    <p class="fragment">
         State updates are async, and react decides how to 'merge' updates.
     </p>
 </section>
 <section>
     <h3>
-        Creating components
+        Creating & Testing Components
     </h3>
     <p>Demo...</p>
 </section>
