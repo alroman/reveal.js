@@ -1,0 +1,156 @@
+<section>
+    <h2>CCLE</h2>
+    <p class="fragment">
+        UCLA's main course management system. 
+    </p>
+</section>
+<section>
+    <h3>
+        Problem
+    </h3>
+    <p>
+        The system is built on Moodle, a monolithic legacy application <span class="fragment">(read: ugly system)</span>
+    </p>
+    <p class="fragment">
+        UI is looking old and tired.  Users are demanding a more modern and mobile UI, but this is not a priority for upstream maintainers.  
+    </p>
+    <p class="fragment">
+        The underlying theme system is incredibly complex with a couple dozen css files and inconsistent template scheme.
+    </p>
+    <p class="fragment">
+        Changes to the UI are done by committee.  Known to be a drawn out and traumatic process for participants.
+    </p>
+</section>
+<section>
+    <h3>
+        Solution
+    </h3>
+    <p>
+        Start small...
+    </p>
+    <p class="fragment">
+        Convince your boss that changes can be done with minimal committee interaction. 
+    </p>
+    <p class="fragment">
+        Convince committee that you're providing a thoughtful and sane approach.
+    </p>
+    <p class="fragment">
+        Start with the system icons.
+    </p>
+</section>
+<section>
+    <img src="images/icons_mockup_part1.png" alt="" class="stretch">
+</section>
+<section>
+    <img src="images/icons_mockup_part2.png" alt="" class="stretch">
+</section>
+<section>
+    <img src="images/icons_mockup_part3.png" alt="" class="stretch">
+    <p>
+        https://jira.ats.ucla.edu/browse/CCLE-2803
+    </p>
+</section>
+<section>
+    <h3>Solution</h3>
+    <p class="fragment">
+        Total cost: $35 icon license fee + lots of stress.
+    </p>
+    <p class="fragment">
+        Bonus: Earned credibility with the committee.
+    </p>
+    <p class="fragment">
+        Made the boss look good.
+    </p>
+</section>
+<section>
+    <h3>
+        Solution
+    </h3>
+    <p>
+        Go big...
+    </p>
+    <p class="fragment">
+        Icon update was huge success.  Support users report more general happiness in life, paves the change for bigger changes. 
+    </p>
+    <p class="fragment">
+        Write manifesto
+    </p>
+</section>
+<section>
+    <img src="images/manifesto.png" alt="" class="stretch">
+    <p>https://jira.ats.ucla.edu/browse/CCLE-3788</p>
+    <p>https://jira.ats.ucla.edu/browse/CCLE-3491</p>
+</section>
+<section>
+    <h3>Proposal</h3>
+    <p class="fragment">
+        Make UI consistent.  Make all UI elements share similar theme.  Use consistent color scheme.  Use consistent fonts.  Usability and accesibility focus.
+    </p>
+    <p class="fragment">
+        Integrate modern CSS framework (like Boostrap) 
+    </p>
+    <p class="fragment">
+        Make it mobile friendly.  Needs to be good looking and functional.
+    </p>
+</section>
+<section>
+    <h3>Overpromise...</h3>
+    <p>Rewriting the theme system is not an option.  It's difficult and time consuming, and would need to convince Moodle community.</p>
+    <p class="fragment">
+        Need alternate approach...
+    </p>
+</section>
+<section>
+    <h3>SASS + Compass</h3>
+    <p>
+        Build a custom CSS toolchain using SASS + Compass (Ruby gems).  
+    </p>
+    <p class="fragment">
+        CSS build system is incredibily flexible and allows importing any external CSS framework as well as overriding current styles. 
+    </p>
+    <p class="fragment">
+        Possible to inject Boostrap framework styles into existing theme classes using SASS `@extend` construct.
+    </p>
+    <p class="fragment">
+        No need to touch underlying Moodle theme system.  My system sits on top and uses the cascade to work.
+    </p>
+</section>
+<section>
+    <h3>Resposive</h3>
+    <p>
+        Responsive design on a legacy system through clever user of breakpoints.
+    </p>
+    <p>
+        https://github.com/ucla/moodle/blob/master/theme/uclashared/sass/ucla/_responsive.scss
+    </p>
+</section>
+<section>
+    <h3>Overdeliver</h3>
+    <p>
+        Build system works much better than expected.  Allows us to upgrade from Boostrap 2 to Bootstrap 3 in a single sprint.
+    </p>
+    <p>
+        We go mobile friendly and recive positive campus feedback.
+    </p>
+    <p>
+        Presented my methods at Moodle conference.
+    </p>
+    <p>
+        Moodle community takes note, but they've already invested their resources into rewriting their theme to use Boostrap styles.  Having intially targetted Boostrap 2, upgrading from Boostrap 2 to Boostrap 3 takes them 6 months!
+    </p>
+</section>
+<section>
+    <h3>
+        System still in place
+    </h3>
+    <p>
+        https://github.com/ucla/moodle
+    </p>
+    <p>
+        https://github.com/ucla/moodle/blob/master/config.rb
+    </p>
+    <p>
+        https://github.com/ucla/moodle/blob/master/theme/uclashared/sass/_form.scss
+    </p>
+    
+</section>
