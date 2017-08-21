@@ -3,13 +3,72 @@
     <p>
         Current position as mobile + web developer.  Showcasing our app content management platform (work in progress).
     </p>
-    <p></p>
+    <p>
+        We produce a lot of mobile apps and we want to make app deployment easier for ourselves.  Goal of CAP is to provide a dynamic way for mobile app owners to update their app content with reusable templates.  In theory this will allow us to build mobile apps quicker, will allow users to share templates, and eventually reduce our support costs.
+    </p>
 </section>
 <section>
     <h3>
         CAP
     </h3>
     <p>
-        
+        The CAP system is composed of three separate architectural components
+    </p>
+    <ul>
+        <li>Authentication system</li>
+        <li>API Server</li>
+        <li>Web frontend</li>
+    </ul>
+</section>
+<section>
+    <h3>Architecture Overview</h3>
+    <img src="images/cap.png" alt="" class="stretch">
+</section>
+<section>
+    <h3>Devops</h3>
+    <p>
+        AWS deployment with S3 bucket to serve front-end.  Elastic Beanstalk + Node for Express server.  EC2 Ubuntu instance running CouchDB.  EC2 intance running Keycloak instance.
+    </p>
+    <p>
+        Loosely coupled architecture allows us to change any single system in the future.
+    </p>
+</section>
+<section>
+    <h3>
+        Authentication System
+    </h3>
+    <p>
+        Using Keycloak in order to provide secure SSO and Oauth/JWT authentication.
+    </p>
+    <p>
+        We also provide Authentication brokering into the campus SSO.  This is notable because it allowed me to leverage my IDM skills, and we are also the only group within UC able to do this.
+    </p>
+</section>
+<section>
+    <h3>API Server</h3>
+    <p>
+        Using Node with Express server.  Leveraging middleware architecture to build RESTful API routes.
+    </p>
+    <p>
+        Server provides endpoints for the web frontend which allows content owners to edit their content.  It also publishes endpoints that CAP apps consume.
+    </p>
+    <p>
+        Uses JWT for authenticating secure API requests.
+    </p>
+</section>
+<section>
+    <h3>
+        Web Frontend
+    </h3>
+    <p>
+        Built with React.js + Redux.  Allows user to modify the state of their mobile apps in a dynamic way.
+    </p>
+</section>
+<section>
+    <h3>
+        React Native Apps
+    </h3>
+    <p>
+        The end goal is to drive native mobile apps.  We use React Native to build the apps for iOS and Android.  These apps retrieve their content from CAP.
     </p>
 </section>
